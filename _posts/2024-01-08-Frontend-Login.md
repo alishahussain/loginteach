@@ -120,6 +120,7 @@ author: Finn Carpenter
         var requestOptions = {
             method: 'POST',
             headers: myHeaders,
+            credentials: 'include',  // Include this line for cross-origin requests with credentials
             body: raw,
             redirect: 'follow'
         };
@@ -129,4 +130,5 @@ author: Finn Carpenter
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
     }
+
 </script>
