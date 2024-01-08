@@ -16,7 +16,7 @@ author: Finn Carpenter
             <input id="signInPasswordInput" class="input" placeholder="Password">
         </div>
         <div class="Buttons">
-            <button class="signInButton" onclick="login_user()">Login</button>
+            <button class="signInButton" onclick="log()">Login</button>
         </div>
     </div>
 </div>
@@ -107,5 +107,26 @@ author: Finn Carpenter
             console.log("success")
         });
     }
-    
+
+    function log() {
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+            "email": "toby@gmail.com",
+            "password": "123Toby!"
+        });
+
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        fetch("http://localhost:8032/authenticate", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+    }
 </script>
