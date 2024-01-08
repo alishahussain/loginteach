@@ -9,8 +9,8 @@ author: Finn Carpenter
 <div class="login-container">
     <div class="card">
         <h3>Login</h3>
-        <div class="Name">
-            <input id="signInNameInput" class="input" placeholder="Name">
+        <div class="Email">
+            <input id="signInEmailInput" class="input" placeholder="Email">
         </div>
         <div class="Password">
             <input id="signInPasswordInput" class="input" placeholder="Password">
@@ -46,13 +46,13 @@ author: Finn Carpenter
     function login_user() {
 
                 // You can make a POST request here to your authentication endpoint
-                var url = "";
+                
 
                 // Comment out next line for local testing
-                // url = "http://localhost:8085";
+                var url = "http://localhost:8032";
                 const login_url = url + '/authenticate';
                 const body = {
-                    email: document.getElementById("signInNameInput").value,
+                    email: document.getElementById("signInEmailInput").value,
                     password: document.getElementById("signInPasswordInput").value,
                 };
 
