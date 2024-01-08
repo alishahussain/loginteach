@@ -20,74 +20,68 @@
 @import "minima/Nighthawkpages-dracula-highlight"; 
 @import "minima/Dark_Mode"; // Dracula Highlight recommended for dark mode
 
-// FOR HAMILTON
-// @import "minima/hamilton/skins/daylight";
-// @import "minima/hamilton/skins/midnight";
-// @import "minima/hamilton/skins/sunrise";
-// @import "minima/hamilton/skins/sunset"
-$color1: #ffffff; // background color;
-$color2: #d1559d; // second color;
-$color3: #3498db; // third color;
-$color4: #2980b9; // fourth color;
+// Cool color palette
+$color1: #5D737E; // Gunmetal
+$color2: #64B6AC; // Medium Aquamarine
+$color3: #D0F4DE; // Tea Green
+$color4: #1B4332; // Dark Jungle Green
 
-@keyframes gradient {
-  0% {
-    background-color: $color1;
+// Warm color palette
+$color5: #FFB447; // Vivid Tangerine
+$color6: #FF3E4D; // Bittersweet
+$color7: #FF1E56; // Razzmatazz
+$color8: #FFBD69; // Peach-Orange
+
+// Creates Lists of Colors
+$colors1: $color1, $color2, $color3, $color4;
+$colors2: $color5, $color6, $color7, $color8;
+
+// Creates Keyframes that loop through that 
+@keyframes fade1 {
+    0% { background-color: nth($colors1, 1); }
+    25% { background-color: nth($colors1, 2); }
+    50% { background-color: nth($colors1, 3); }
+    75% { background-color: nth($colors1, 4); }
+    100% { background-color: nth($colors1, 1); }
   }
-  25% {
-    background-color: $color2;
-  }
-  50% {
-    background-color: $color3;
-  }
-  75% {
-    background-color: $color4;
-  }
-  100% {
-    background-color: $color1;
-  }
+  
+  @keyframes fade2 {
+    0% { background-color: nth($colors2, 1); }
+    25% { background-color: nth($colors2, 2); }
+    50% { background-color: nth($colors2, 3); }
+    75% { background-color: nth($colors2, 4); }
+    100% { background-color: nth($colors2, 1); }
 }
 
 .login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: black;
-
-  .card {
-    width: 300px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    animation: gradient 10s ease infinite;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    
+    .card2 {
+        width: 300px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        animation: fade2 5s ease infinite; // change here
+    }
+    
+    .card {
+        width: 300px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        animation: fade1 5s ease infinite; // change here
+    }
+    
     h3 {
-      margin-bottom: 20px;
+        margin-bottom: 20px;
     }
 
     .input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border-radius: 5px;
-      border: 1px solid #ddd;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
     }
-
-    .Buttons {
-      display: flex;
-      justify-content: space-between;
-
-      .cool-btn {
-        padding: 10px 20px;
-        border-radius: 5px;
-        border: none;
-        color: white;
-        cursor: pointer;
-
-        &:hover {
-          background: darken($color3, 10%);
-        }
-      }
-    }
-  }
 }
