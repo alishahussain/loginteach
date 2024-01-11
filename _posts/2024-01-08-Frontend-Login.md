@@ -49,7 +49,7 @@ author: Finn Carpenter
                 
 
                 // Comment out next line for local testing
-                var url = "http://localhost:8032";
+                var url = "http://localhost:8085";
                 const login_url = url + '/authenticate';
                 const body = {
                     email: document.getElementById("signInEmailInput").value,
@@ -106,7 +106,7 @@ author: Finn Carpenter
             // Redirect to Database location
             console.log("success")
         });
-        // window.location.href = "http://127.0.0.1:4100/Login-Lesson/database";
+        window.location.href = "http://127.0.0.1:4100/Login-Lesson/database";
     }
 
     function log() {
@@ -117,6 +117,7 @@ author: Finn Carpenter
             "email": "toby@gmail.com",
             "password": "123Toby!"
         });
+        console.log(raw);
 
         var requestOptions = {
             method: 'POST',
@@ -126,12 +127,12 @@ author: Finn Carpenter
             redirect: 'follow'
         };
 
-        fetch("http://localhost:8032/authenticate", requestOptions)
+        fetch("http://localhost:8085/authenticate", requestOptions)
         .then(response => response.text())
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
 
-        // window.location.href = "http://127.0.0.1:4100/Login-Lesson/database";
+        window.location.href = "http://127.0.0.1:4100/Login-Lesson/database";
     }
 
 </script>
