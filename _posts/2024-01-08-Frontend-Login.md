@@ -106,7 +106,7 @@ author: Finn Carpenter
             // Redirect to Database location
             console.log("success")
         });
-        window.location.href = "http://127.0.0.1:4100/Login-Lesson/database";
+        // window.location.href = "http://127.0.0.1:4100/Login-Lesson/database";
     }
 
     function log() {
@@ -131,7 +131,7 @@ author: Finn Carpenter
         .then(result => console.log(result))
         .catch(error => console.log('error', error));
 
-         window.location.href = "http://127.0.0.1:4100/Login-Lesson/database";
+        // window.location.href = "http://127.0.0.1:4100/Login-Lesson/database";
     }
 
 </script>
