@@ -1,6 +1,6 @@
 ---
 layout: base
-title: database accessible from authentication
+title: User Database
 description: cool
 permalink: /database
 ---
