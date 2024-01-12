@@ -54,7 +54,7 @@ title: Login - Signup
         let fetchEmail = document.getElementById("signUpEmailInput").value
         let fetchPassword = document.getElementById("signUpPasswordInput").value
 
-        fetch(`localhost:8085/api/person/post?email=${fetchEmail}&password=${fetchPassword}@123&name=${fetchName}`, requestOptions)
+        fetch(`http://localhost:8085/api/person/post?email=${fetchEmail}&password=${fetchPassword}@123&name=${fetchName}`, requestOptions)
         .then(response => {
             if (!response.ok) {
                 const errorMsg = 'Login error: ' + response.status;
@@ -63,7 +63,6 @@ title: Login - Signup
             }
             // Success!!!
             // Redirect to Database location
-            window.location.href = "http://127.0.0.1:4100/Login-Lesson/database";
         });
     }
 
