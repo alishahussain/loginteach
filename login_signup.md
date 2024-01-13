@@ -71,8 +71,10 @@ title: Login - Signup
         myHeaders.append("Content-Type", "application/json");
 
         var raw = JSON.stringify({
-            "email": document.getElementById("signInEmailInput").value,
-            "password": document.getElementById("signInPasswordInput").value
+            //"email": document.getElementById("signInEmailInput").value,
+            //"password": document.getElementById("signInPasswordInput").value
+            "email": "toby@gmail.com",
+            "password": "123Toby!"
         });
         console.log(raw);
 
@@ -107,12 +109,14 @@ title: Login - Signup
 
                 return Promise.reject('Login failed');
             }
-
-            // Success!!! Redirect to Database location
-            window.location.href = "http://127.0.0.1:4100/Login-Lesson/database";
+            return response.text()
         })
-        .then(result => console.log(result))
+        .then(result => {
+            console.log(result);
+            //window.location.href = "http://127.0.0.1:4100/Login-Lesson/database";
+        })
         .catch(error => console.error('Error during login:', error));
+
     }
 
 </script>
