@@ -34,6 +34,9 @@ permalink: loginSignup
         <div class="Password">
             <input id="signUpPasswordInput" type="password" class="input" placeholder="Password">
         </div>
+        <div class="Dob">
+            <input id="signUpDobInput" class="input" placeholder="Date of birth (MM-DD-YYYY)">
+        </div>
         <div class="Buttons">
             <button class="signUpButton" onclick="signup_user()">Sign Up</button>
         </div>
@@ -51,20 +54,29 @@ permalink: loginSignup
             credentials: 'include',
         };
 
-        let fetchName = document.getElementById("signUpNameInput").value
-        let fetchEmail = document.getElementById("signUpEmailInput").value
-        let fetchPassword = document.getElementById("signUpPasswordInput").value
+        let fetchName = document.getElementById("signUpNameInput").value;
+        let fetchEmail = document.getElementById("signUpEmailInput").value;
+        let fetchPassword = document.getElementById("signUpPasswordInput").value;
+        let fetchDob = document.getElementById("signUpDobInput").value;
 
-        fetch(`http://localhost:8085/api/person/post?email=${fetchEmail}&password=${fetchPassword}@123&name=${fetchName}`, requestOptions)
+        let requestURL = `http://localhost:8085/api/person/post?email=${fetchEmail}&password=${fetchPassword}&name=${fetchName}&dob=${fetchDob}`;
+        console.log(requestURL)
+
+        fetch(requestURL, requestOptions)
         .then(response => {
-            if (!response.ok) {
-                const errorMsg = 'Login error: ' + response.status;
-                console.log(errorMsg);
-                return;
-            }
-            // Success!!!
-            // Redirect to Database location
-        });
+                if (!response.ok) {
+                    return response.text().then(errorMsg => {
+                        alert('Error: ' + errorMsg);
+                    });
+                }
+                // Success!!!
+                alert("Signup Complete");
+                location.reload();
+                // Redirect to Database location
+            })
+            .catch(error => {
+                alert('An unexpected error occurred: ' + error.message);
+            });
     }
 
     function login_user() {
