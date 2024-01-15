@@ -32,25 +32,21 @@ $color6: #FF3E4D; // Bittersweet
 $color7: #FF1E56; // Razzmatazz
 $color8: #FFBD69; // Peach-Orange
 
-// Creates Lists of Colors
-$colors1: $color1, $color2, $color3, $color4;
-$colors2: $color5, $color6, $color7, $color8;
-
 // Creates Keyframes that loop through that 
 @keyframes fade1 {
-    0% { background-color: nth($colors1, 1); }
-    25% { background-color: nth($colors1, 2); }
-    50% { background-color: nth($colors1, 3); }
-    75% { background-color: nth($colors1, 4); }
-    100% { background-color: nth($colors1, 1); }
+    0% { background-color: $color1}
+    25% { background-color: $color2}
+    50% { background-color: $color3}
+    75% { background-color: $color4}
+    100% { background-color: $color1}
   }
   
   @keyframes fade2 {
-    0% { background-color: nth($colors2, 1); }
-    25% { background-color: nth($colors2, 2); }
-    50% { background-color: nth($colors2, 3); }
-    75% { background-color: nth($colors2, 4); }
-    100% { background-color: nth($colors2, 1); }
+    0% { background-color: $color5}
+    25% { background-color: $color6}
+    50% { background-color: $color7}
+    75% { background-color: $color8}
+    100% { background-color: $color5}
 }
 
 .login-container {
