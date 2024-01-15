@@ -13,7 +13,7 @@ permalink: /account
   <thead>
   <tr>
     <th>Name</th>
-    <th>ID</th>
+    <th>Email</th>
     <th>Age</th>
   </tr>
   </thead>
