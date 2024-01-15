@@ -143,11 +143,9 @@ permalink: /account
   function clearCookie(name, domain, path) {
     // Set the expiration date to a past date
     document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=${domain}; path=${path}; HttpOnly=${true}; Secure=${true}; SameSite=None`;
-}
+  }
 
 // Call the function with your cookie details
-clearCookie('jwt', 'localhost', '/');
-
 
   function signOut() {
     console.log("signout called");
