@@ -50,8 +50,7 @@ permalink: loginSignup
         var requestOptions = {
             method: 'POST',
             mode: 'cors',
-            cache: 'no-cache',
-            credentials: 'include',
+            cache: 'no-cache'
         };
 
         let fetchName = document.getElementById("signUpNameInput").value;
