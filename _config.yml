@@ -1,9 +1,9 @@
 title: Login Lesson
 description: Frontend for Login/Signup Lesson
-owner_name: Finn C, Justin N, Theo H
-github_username: F1nnC
-github_repo: "Login-Lesson"
-baseurl: "/Login-Lesson/"
+owner_name: Alisha H, Sharon K, Peyton L, Tara S, Anika B
+github_username: alishahussain
+github_repo: "loginteach"
+baseurl: "/loginteach/"
 remote_theme: jekyll/minima
 minima:
 plugins:
