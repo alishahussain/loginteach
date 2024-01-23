@@ -127,7 +127,7 @@ permalink: loginSignup
         })
         .then(result => {
             console.log(result);
-            window.location.href = "http://127.0.0.1:4100/Login-Lesson/account";
+            window.location.href = "http://127.0.0.1:4100/loginteach/account";
         })
         .catch(error => console.error('Error during login:', error));
 

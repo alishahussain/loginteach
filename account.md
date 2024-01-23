@@ -106,7 +106,7 @@ permalink: /account
                     switch (response.status) {
                         case 401:
                             alert("Please log into or make an account");
-                            window.location.href = "http://127.0.0.1:4100/Login-Lesson/loginSignup";
+                            window.location.href = "http://127.0.0.1:4100/loginteach/loginSignup";
                             break;
                         case 403:
                             alert("Access forbidden. You do not have permission to access this resource.");
@@ -128,7 +128,7 @@ permalink: /account
           // Display user data above the table
           const userDataContainer = document.getElementById("userData");
           userDataContainer.innerHTML = `
-            <img src="/Login-Lesson/images/defaultUser.png" width="250" height="250">
+            <img src="/loginteach/images/defaultUser.png" width="250" height="250">
             <h1><strong>${data.name}</strong></h1>
             <p>Email: ${data.email}</p>
             <p>Age: ${data.age}</p>
